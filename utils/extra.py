@@ -1,8 +1,5 @@
 import os
 import random
-import time
-from datetime import datetime as dt
-from datetime import timedelta as td
 from math import sqrt
 
 from numpy import nan, sqrt
@@ -10,13 +7,32 @@ from obspy.geodetics.base import degrees2kilometers as d2k
 from obspy.geodetics.base import locations2degrees as l2d
 from pandas import read_json, read_csv, to_datetime
 
+
 def parseStationFile(stationFileName):
+    """Parse station information
+
+    Args:
+        stationFileName (str): path to station file
+
+    Returns:
+        DataFrame: a panda dataFrame contains stations information
+    """
     stationsDF = read_csv(stationFileName, delim_whitespace=True)
     return stationsDF
 
+
 def parseVelocityFile(velocityFileName):
+    """Parse velocity information
+
+    Args:
+        velocityFileName (str): path to velocity file
+
+    Returns:
+        DataFrame: a panda dataFrame contains velocity information
+    """
     velocityDF = read_csv(velocityFileName, delim_whitespace=True)
     return velocityDF
+
 
 def distanceDiff(xa, xb, ya, yb):
     """Compute distance between two lists of points
@@ -120,56 +136,54 @@ def ReadExtra(pick, reverseWeight=False):
 def hypoDD2xyzm():
     """Convert HypoDD "reloc" file to "xyzm"
     """
-    events = read_json("events.json")
-    ots = to_datetime(events["OT"])
-    with open("hypoDD.reloc") as f, open("xyzm.dat", "w") as g:
-        header = "     LON     LAT   DEPTH     MAG    PHUSD   NO_ST   MIND     GAP     RMS     SEH     SEZ  YYYY MM DD HH MN SEC"
-        g.write(header+"\n")
-        for l in f:
-            if "NaN" in l.split():
-                continue
-            _, lat, lon, dep, _, _, _, ex, ey, ez, yr, mo, dy, hr, mn, sc, mag, _, _, _, _, _, rms, _ = [
-                float(_) for _ in l.split()]
-            if sc == 60.0:
-                sc = 59.99
-            yr, mo, dy, hr, mn = [int(_) for _ in [yr, mo, dy, hr, mn]]
-            msc = int((sc - int(sc))*1e6)
-            sc = int(sc)
-            ort = dt(yr, mo, dy, hr, mn, sc, msc)
-            mag = events[abs(ots-ort) < td(seconds=5)  # type: ignore
-                         ].Mag.values[0]
-            if not mag:
-                mag = 0.0
-            ort = ort.strftime("  %Y %m %d %H %M %S.%f")[:24]
-            nop = 99
-            nst = 99
-            mds = 99
-            gap = 360
-            ex, ey, ez = ex/1000., ey/1000., ez/1000.
-            seh = sqrt((ex)**2 + (ey)**2)
-            sez = ez
-            fmt = '%8.3f%8.3f%8.1f%8.1f%8d%8d%8.1f%8d%8.3f%8.1f%8.1f'
-            fmt = fmt + ort+'\n'
-            # lon lat dep mag phusd no_st mds gap rms seh sez
-            g.write(fmt % (lon, lat, dep, mag, nop,
-                    nst, mds, gap, rms, seh, sez))
+    originEvents = read_json("events.json")
+    columns = ["ID", "LAT", "LON", "DEPTH", "X", "Y", "Z", "EX", "EY", "EZ", "YYYY", "MM",
+               "DD", "HH", "MN", "SEC", "MAG", "NCCP", "NCCS", "NPHASEP", "NPHASES", "RCC", "RMS", "CID"]
+    relocatedEvents = read_csv(
+        "hypoDD.reloc", delim_whitespace=True, names=columns)
+    for i, relocatedEvent in relocatedEvents.iterrows():
+        mag = originEvents[originEvents.ID == relocatedEvent.ID].Mag
+        relocatedEvents.at[i, "MAG"] = mag
+    for NoneValue in ["NSTUSED", "MIND", "GAP", "SEH", "SEZ"]:
+        relocatedEvents[NoneValue] = nan
+    formatters = {
+        "LON": '{:.3f}'.format,
+        "LAT": '{:.3f}'.format,
+        "DEPTH": '{:.1f}'.format,
+        "MAG": '{:.1f}'.format,
+        "NSTUSED": '{:.0f}'.format,
+        "NPHASEP": '{:.0f}'.format,
+        "NPHASES": '{:.0f}'.format,
+        "MIND": '{:.0f}'.format,
+        "GAP": '{:.0f}'.format,
+        "RMS": '{:.2f}'.format,
+        "SEH": '{:.0f}'.format,
+        "SEZ": '{:.0f}'.format,
+        "YYYY": '{:.0f}'.format,
+        "MM": '{:.0f}'.format,
+        "DD": '{:.0f}'.format,
+        "HH": '{:.0f}'.format,
+        "MN": '{:.0f}'.format,
+        "SEC": '{:.2f}'.format
+    }
+    columns = list(formatters.keys())
+    relocatedEvents.to_string(
+        "xyzm.dat", columns=columns, formatters=formatters, index=False)
     cmd = "rm *reloc*"
     os.system(cmd)
 
 
-def checkStationDist(configs, stationsDF):
+def filterStations(configs, stationsDF):
     """Check if station is within the radius defined by user
 
     Args:
         configs (dict): a dictionary contains configurations
-        staLat (float): latitude of station
-        staLon (float): longitude of station
+        stationsDF (DataFrame): a pandas data-frame contains stations information
 
     Returns:
-        bool: True if the station lies within the pre-defined radius
+        DataFrame: a pandas data-frame contains filtered stations
     """
-
-    d = d2k(l2d(configs["Region"]["CentralLat"], configs["Region"]["CentralLon"],
-            stationsDF.LAT.values, stationsDF.LON.values))
-    stationsDF = stationsDF[d <= configs["PH2DT"]["MAXDIST"]]
+    criticalDistance = d2k(l2d(configs["Region"]["CentralLat"], configs["Region"]["CentralLon"],
+                               stationsDF.LAT.values, stationsDF.LON.values))
+    stationsDF = stationsDF[criticalDistance <= configs["PH2DT"]["MAXDIST"]]
     return stationsDF

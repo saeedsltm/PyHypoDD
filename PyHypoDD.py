@@ -6,7 +6,7 @@ from obspy import read_events
 from tqdm import tqdm
 from yaml import SafeLoader, load
 
-from utils.extra import parseStationFile, parseVelocityFile, checkStationDist, hypoDD2xyzm
+from utils.extra import parseStationFile, parseVelocityFile, filterStations, hypoDD2xyzm
 from utils.hypoDD import (prepareHypoDDConfigFiles, writeEventsInfo, writeHeader,
                           writePhase)
 
@@ -29,7 +29,7 @@ class HypoDD():
     def prepareHypoDDInputFiles(self):
         """Prepare input files for running HypoDD
         """
-        usedStationsDF = checkStationDist(self.configs, self.stationsDF)
+        usedStationsDF = filterStations(self.configs, self.stationsDF)
         usedStationsDF.to_csv(os.path.join(self.resultDir, "station.dat"), sep=' ', index=False, header=False)
         eventsInfo = []
         with open(os.path.join(self.resultDir, "phase.dat"), "w") as f:

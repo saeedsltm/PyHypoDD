@@ -1,4 +1,4 @@
-starting hypoDD (v2.1beta - 06/15/2016)...   Wed Aug 24 21:18:40 2022
+starting hypoDD (v2.1beta - 06/15/2016)...   Thu Aug 25 00:17:45 2022
 Input parameters: (from hypoDD.inp hypoDD vers.1.x)
   cross dtime file:  
   catalog dtime file: dt.ct
@@ -37,7 +37,7 @@ Input parameters: (from hypoDD.inp hypoDD vers.1.x)
  Relocate all events
 Use local layered 1D model.
 
-~ Reading data ...   Wed Aug 24 21:18:40 2022ÿ
+~ Reading data ...   Thu Aug 25 00:17:45 2022ÿ
 # stations total =     23
 # stations < maxdist =     23
 # stations w/ neg. elevation (set to 0) =    0
@@ -95,10 +95,10 @@ Cluster    2:     2 events
    100329     100297
 
 
-RELOCATION OF CLUSTER: 1     Wed Aug 24 21:18:40 2022
+RELOCATION OF CLUSTER: 1     Thu Aug 25 00:17:45 2022
 ----------------------
 
-~ Reading data ...   Wed Aug 24 21:18:40 2022U
+~ Reading data ...   Thu Aug 25 00:17:45 2022U
 # stations total =     23
 # stations < maxdist =     23
 # stations w/ neg. elevation (set to 0) =    0
@@ -112,7 +112,7 @@ Rotation of coordinate system:   0.000000
 # events:  298
 # initial trial sources:   298
 
-===ITERATION   1 (  1) Wed Aug 24 21:18:40 2022
+===ITERATION   1 (  1) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -134,12 +134,12 @@ Residual summary of initial data:
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        12144         298         298   55.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:40 2022
+~ lsqr ...    Thu Aug 25 00:17:45 2022
   istop = 2; acond (CND)=    28.9; anorm =   694.7; arnorm =    32.4; xnorm =   434.5
 
 Residual summary:
  absolute mean [s] =  0.0092 (    Inf %)
- weighted mean [s] =  0.0080 ( -77.53 %)
+ weighted mean [s] =  0.0080 (******* %)
  absolute variance [s] =   197.5692 (    Inf %)
  weighted variance [s] =   187.1546 (    Inf %)
  absolute ct rms [s] =  0.4222 ( -37.99 %)
@@ -165,9 +165,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.001
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  1  1 100 100  415 -39.0   850  897  713 1048  216   42   0   29
-Iteration  1 finished Wed Aug 24 21:18:40 2022
+Iteration  1 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION   2 (  2) Wed Aug 24 21:18:40 2022
+===ITERATION   2 (  2) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -181,12 +181,12 @@ no data skipped.
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        12144         298         298   55.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:40 2022˜
+~ lsqr ...    Thu Aug 25 00:17:45 2022V
   istop = 2; acond (CND)=    27.8; anorm =   668.8; arnorm =    22.1; xnorm =   154.7
 
 Residual summary:
  absolute mean [s] =  0.0042 (    Inf %)
- weighted mean [s] =  0.0026 ( -92.82 %)
+ weighted mean [s] =  0.0026 (******* %)
  absolute variance [s] =   175.7368 (    Inf %)
  weighted variance [s] =   166.1315 (    Inf %)
  absolute ct rms [s] =  0.3981 (  -5.70 %)
@@ -212,9 +212,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.002
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  2  2 100 100  391  -5.8   846  277  326  450   70   66   0   28
-Iteration  2 finished Wed Aug 24 21:18:40 2022
+Iteration  2 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION   3 (  3) Wed Aug 24 21:18:40 2022
+===ITERATION   3 (  3) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -228,12 +228,12 @@ no data skipped.
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        12144         298         298   55.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:40 2022˜
+~ lsqr ...    Thu Aug 25 00:17:45 2022V
   istop = 2; acond (CND)=    26.7; anorm =   647.3; arnorm =    18.1; xnorm =    93.1
 
 Residual summary:
  absolute mean [s] =  0.0033 (    Inf %)
- weighted mean [s] =  0.0016 ( -95.43 %)
+ weighted mean [s] =  0.0016 (******* %)
  absolute variance [s] =   169.5285 (    Inf %)
  weighted variance [s] =   160.1630 (    Inf %)
  absolute ct rms [s] =  0.3910 (  -1.78 %)
@@ -259,9 +259,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.003
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  3  3 100 100  384  -1.8   855  143  228  321   35  108   0   27
-Iteration  3 finished Wed Aug 24 21:18:40 2022
+Iteration  3 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION   4 (  4) Wed Aug 24 21:18:40 2022
+===ITERATION   4 (  4) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -275,12 +275,12 @@ no data skipped.
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        12144         298         298   55.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:40 2022˜
+~ lsqr ...    Thu Aug 25 00:17:45 2022V
   istop = 2; acond (CND)=    25.6; anorm =   633.5; arnorm =    21.1; xnorm =    67.6
 
 Residual summary:
  absolute mean [s] =  0.0028 (    Inf %)
- weighted mean [s] =  0.0011 ( -96.79 %)
+ weighted mean [s] =  0.0011 (******* %)
  absolute variance [s] =   166.4541 (    Inf %)
  weighted variance [s] =   157.3126 (    Inf %)
  absolute ct rms [s] =  0.3875 (  -0.91 %)
@@ -306,9 +306,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.004
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  4  4 100 100  380  -0.9   861   89  169  241   23  150   0   26
-Iteration  4 finished Wed Aug 24 21:18:40 2022
+Iteration  4 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION   5 (  5) Wed Aug 24 21:18:40 2022
+===ITERATION   5 (  5) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -322,12 +322,12 @@ no data skipped.
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        12144         298         298   55.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:40 2022˜
+~ lsqr ...    Thu Aug 25 00:17:45 2022V
   istop = 2; acond (CND)=    25.7; anorm =   634.8; arnorm =    16.8; xnorm =    51.1
 
 Residual summary:
  absolute mean [s] =  0.0027 (    Inf %)
- weighted mean [s] =  0.0011 ( -96.97 %)
+ weighted mean [s] =  0.0011 (******* %)
  absolute variance [s] =   165.0141 (    Inf %)
  weighted variance [s] =   155.9387 (    Inf %)
  absolute ct rms [s] =  0.3858 (  -0.43 %)
@@ -353,9 +353,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.005
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  5  5 100 100  379  -0.4   863   61  129  191   17  191   0   26
-Iteration  5 finished Wed Aug 24 21:18:40 2022
+Iteration  5 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION   6 (  6) Wed Aug 24 21:18:40 2022
+===ITERATION   6 (  6) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -364,7 +364,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    16 stations and   298 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:40 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  3.128s/ 20.00km (  0.6%)
 skipping data...
 # obs =     12073 ( 99.4%)
@@ -374,12 +374,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        12073         297         297   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:40 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    28.9; anorm =   659.4; arnorm =    20.6; xnorm =    52.6
 
 Residual summary:
  absolute mean [s] =  0.0025 (    Inf %)
- weighted mean [s] =  0.0007 ( -98.10 %)
+ weighted mean [s] =  0.0007 (******* %)
  absolute variance [s] =   163.1727 (    Inf %)
  weighted variance [s] =   101.2338 (    Inf %)
  absolute ct rms [s] =  0.3836 (  -0.57 %)
@@ -405,9 +405,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.006
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  6  6 100  99  347  -8.4  1034  164  144  197   17  193   0   29
-Iteration  6 finished Wed Aug 24 21:18:40 2022
+Iteration  6 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION   7 (  7) Wed Aug 24 21:18:40 2022
+===ITERATION   7 (  7) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -416,7 +416,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    16 stations and   297 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:40 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.985s/ 20.00km (  0.0%)
 skipping data...
 # obs =     12072 (  Inf%)
@@ -426,12 +426,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        12072         297         297   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:40 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    29.1; anorm =   656.6; arnorm =    12.8; xnorm =    38.0
 
 Residual summary:
  absolute mean [s] =  0.0026 (    Inf %)
- weighted mean [s] =  0.0007 ( -97.94 %)
+ weighted mean [s] =  0.0007 (******* %)
  absolute variance [s] =   163.6448 (    Inf %)
  weighted variance [s] =    96.1528 (    Inf %)
  absolute ct rms [s] =  0.3841 (   0.14 %)
@@ -457,9 +457,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.007
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  7  7 100  99  340  -1.8  1281   88  107  161   12  228   0   29
-Iteration  7 finished Wed Aug 24 21:18:40 2022
+Iteration  7 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION   8 (  8) Wed Aug 24 21:18:40 2022
+===ITERATION   8 (  8) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -468,7 +468,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    16 stations and   297 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:40 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.929s/ 20.00km (  0.0%)
 skipping data...
 # obs =     12071 (  Inf%)
@@ -478,12 +478,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        12071         297         297   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:40 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    27.7; anorm =   638.2; arnorm =    13.9; xnorm =    30.5
 
 Residual summary:
  absolute mean [s] =  0.0021 (    Inf %)
- weighted mean [s] =  0.0005 ( -98.67 %)
+ weighted mean [s] =  0.0005 (******* %)
  absolute variance [s] =   163.5044 (    Inf %)
  weighted variance [s] =    93.2579 (    Inf %)
  absolute ct rms [s] =  0.3840 (  -0.04 %)
@@ -500,9 +500,9 @@ Location summary:
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  8    100  99  337  -0.9  1281   57   88  135   10  228   1   28
-Iteration  8 finished Wed Aug 24 21:18:41 2022
+Iteration  8 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION   8 (  9) Wed Aug 24 21:18:41 2022
+===ITERATION   8 (  9) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -511,7 +511,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    16 stations and   297 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.929s/ 20.00km (  0.5%)
 skipping data...
 # obs =     12011 (  Inf%)
@@ -521,12 +521,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        12011         296         296   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    27.5; anorm =   632.8; arnorm =    13.6; xnorm =    30.8
 
 Residual summary:
  absolute mean [s] =  0.0019 (    Inf %)
- weighted mean [s] =  0.0004 ( -98.98 %)
+ weighted mean [s] =  0.0004 (******* %)
  absolute variance [s] =   161.8601 (    Inf %)
  weighted variance [s] =    92.9580 (    Inf %)
  absolute ct rms [s] =  0.3820 (  -0.51 %)
@@ -543,9 +543,9 @@ Location summary:
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  9     99  99  336  -0.3  1281   63   92  135    9  228   1   28
-Iteration  9 finished Wed Aug 24 21:18:41 2022
+Iteration  9 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION   8 ( 10) Wed Aug 24 21:18:41 2022
+===ITERATION   8 ( 10) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -554,7 +554,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    16 stations and   296 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.924s/ 20.00km (  0.4%)
 skipping data...
 # obs =     11966 (  Inf%)
@@ -564,12 +564,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        11966         295         295   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    27.6; anorm =   636.2; arnorm =    14.1; xnorm =    30.5
 
 Residual summary:
  absolute mean [s] =  0.0019 (    Inf %)
- weighted mean [s] =  0.0003 ( -99.10 %)
+ weighted mean [s] =  0.0003 (******* %)
  absolute variance [s] =   161.1725 (    Inf %)
  weighted variance [s] =    92.8994 (    Inf %)
  absolute ct rms [s] =  0.3812 (  -0.21 %)
@@ -595,9 +595,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.008
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 10  8  99  99  336  -0.1  1528   62   91  133    9  287   0   28
-Iteration 10 finished Wed Aug 24 21:18:41 2022
+Iteration 10 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION   9 ( 11) Wed Aug 24 21:18:41 2022
+===ITERATION   9 ( 11) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -606,7 +606,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    16 stations and   295 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.891s/ 20.00km (  0.0%)
 skipping data...
 # obs =     11965 (  Inf%)
@@ -616,12 +616,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        11965         295         295   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    26.2; anorm =   617.4; arnorm =    16.8; xnorm =    24.8
 
 Residual summary:
  absolute mean [s] =  0.0017 (    Inf %)
- weighted mean [s] =  0.0003 ( -99.21 %)
+ weighted mean [s] =  0.0003 (******* %)
  absolute variance [s] =   160.9603 (    Inf %)
  weighted variance [s] =    90.5425 (    Inf %)
  absolute ct rms [s] =  0.3809 (  -0.07 %)
@@ -647,9 +647,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.009
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 11  9  99  99  334  -0.6  1720   47   72  105    7  305   0   26
-Iteration 11 finished Wed Aug 24 21:18:41 2022
+Iteration 11 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  10 ( 12) Wed Aug 24 21:18:41 2022
+===ITERATION  10 ( 12) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -658,19 +658,19 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    16 stations and   295 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.878s/ 20.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        11965         295         295   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:45 2022 
   istop = 2; acond (CND)=    26.2; anorm =   616.8; arnorm =    14.7; xnorm =    24.2
 
 Residual summary:
  absolute mean [s] =  0.0016 (    Inf %)
- weighted mean [s] =  0.0002 ( -99.58 %)
+ weighted mean [s] =  0.0002 (******* %)
  absolute variance [s] =   161.2188 (    Inf %)
  weighted variance [s] =    89.0553 (    Inf %)
  absolute ct rms [s] =  0.3812 (   0.08 %)
@@ -696,9 +696,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.010
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 12 10  99  99  333  -0.3  1785   34   68  100    6  311   0   26
-Iteration 12 finished Wed Aug 24 21:18:41 2022
+Iteration 12 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  11 ( 13) Wed Aug 24 21:18:41 2022
+===ITERATION  11 ( 13) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -707,7 +707,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    16 stations and   295 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.572s/ 15.00km (  1.2%)
 skipping data...
 # obs =     11827 (  Inf%)
@@ -717,12 +717,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        11827         295         295   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    31.8; anorm =   670.1; arnorm =    13.6; xnorm =    24.8
 
 Residual summary:
  absolute mean [s] =  0.0009 (    Inf %)
- weighted mean [s] =  0.0002 ( -99.41 %)
+ weighted mean [s] =  0.0002 (******* %)
  absolute variance [s] =   160.0837 (    Inf %)
  weighted variance [s] =    67.2912 (    Inf %)
  absolute ct rms [s] =  0.3796 (  -0.42 %)
@@ -748,9 +748,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.011
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 13 11  99  97  333   0.0   904   84   97  127    9  343   0   32
-Iteration 13 finished Wed Aug 24 21:18:41 2022
+Iteration 13 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  12 ( 14) Wed Aug 24 21:18:41 2022
+===ITERATION  12 ( 14) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -759,7 +759,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   295 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.530s/ 15.00km (  0.5%)
 skipping data...
 # obs =     11763 (  Inf%)
@@ -769,12 +769,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        11763         295         295   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    30.3; anorm =   648.0; arnorm =    13.5; xnorm =    19.3
 
 Residual summary:
  absolute mean [s] =  0.0009 (    Inf %)
- weighted mean [s] =  0.0000 ( -99.95 %)
+ weighted mean [s] =  0.0000 (******* %)
  absolute variance [s] =   161.6205 (    Inf %)
  weighted variance [s] =    66.0130 (    Inf %)
  absolute ct rms [s] =  0.3813 (   0.45 %)
@@ -791,9 +791,9 @@ Location summary:
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 14     99  97  329  -1.0   904   51   71   92    6  343   1   30
-Iteration 14 finished Wed Aug 24 21:18:41 2022
+Iteration 14 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  12 ( 15) Wed Aug 24 21:18:41 2022
+===ITERATION  12 ( 15) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -802,7 +802,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   295 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.525s/ 15.00km (  0.2%)
 skipping data...
 # obs =     11735 (  Inf%)
@@ -812,12 +812,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        11735         294         294   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    30.3; anorm =   647.5; arnorm =    13.5; xnorm =    19.3
 
 Residual summary:
  absolute mean [s] =  0.0010 (    Inf %)
- weighted mean [s] =  0.0000 ( -99.92 %)
+ weighted mean [s] =  0.0000 (******* %)
  absolute variance [s] =   161.8438 (    Inf %)
  weighted variance [s] =    66.0670 (    Inf %)
  absolute ct rms [s] =  0.3816 (   0.07 %)
@@ -843,9 +843,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.012
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 15 12  99  97  329  -0.1   907   51   71   92    6  373   0   30
-Iteration 15 finished Wed Aug 24 21:18:41 2022
+Iteration 15 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  13 ( 16) Wed Aug 24 21:18:41 2022
+===ITERATION  13 ( 16) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -854,7 +854,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   294 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.513s/ 15.00km (  0.2%)
 skipping data...
 # obs =     11713 (  Inf%)
@@ -864,12 +864,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        11713         294         294   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    30.6; anorm =   648.2; arnorm =    13.6; xnorm =    18.9
 
 Residual summary:
  absolute mean [s] =  0.0007 (    Inf %)
- weighted mean [s] = -0.0000 (-100.12 %)
+ weighted mean [s] = -0.0000 (******* %)
  absolute variance [s] =   161.7462 (    Inf %)
  weighted variance [s] =    65.0347 (    Inf %)
  absolute ct rms [s] =  0.3815 (  -0.04 %)
@@ -886,9 +886,9 @@ Location summary:
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 16     99  96  328  -0.4   907   39   60   87    5  373   1   31
-Iteration 16 finished Wed Aug 24 21:18:41 2022
+Iteration 16 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  13 ( 17) Wed Aug 24 21:18:41 2022
+===ITERATION  13 ( 17) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -897,7 +897,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   294 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.512s/ 15.00km (  0.3%)
 skipping data...
 # obs =     11677 (  Inf%)
@@ -907,12 +907,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        11677         293         293   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    30.4; anorm =   644.2; arnorm =    13.3; xnorm =    18.7
 
 Residual summary:
  absolute mean [s] =  0.0010 (    Inf %)
- weighted mean [s] =  0.0000 ( -99.90 %)
+ weighted mean [s] =  0.0000 (******* %)
  absolute variance [s] =   161.6505 (    Inf %)
  weighted variance [s] =    65.1184 (    Inf %)
  absolute ct rms [s] =  0.3814 (  -0.03 %)
@@ -938,9 +938,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.013
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 17 13  98  96  328  -0.1   910   40   60   86    5  422   0   30
-Iteration 17 finished Wed Aug 24 21:18:41 2022
+Iteration 17 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  14 ( 18) Wed Aug 24 21:18:41 2022
+===ITERATION  14 ( 18) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -949,7 +949,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   293 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.500s/ 15.00km (  0.1%)
 skipping data...
 # obs =     11665 (  Inf%)
@@ -959,12 +959,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        11665         293         293   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    30.5; anorm =   647.5; arnorm =    11.3; xnorm =    17.6
 
 Residual summary:
  absolute mean [s] =  0.0011 (    Inf %)
- weighted mean [s] = -0.0001 (-100.22 %)
+ weighted mean [s] = -0.0001 (******* %)
  absolute variance [s] =   161.4384 (    Inf %)
  weighted variance [s] =    64.2428 (    Inf %)
  absolute ct rms [s] =  0.3811 (  -0.07 %)
@@ -990,9 +990,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.014
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 18 14  98  96  327  -0.2   913   33   53   78    5  426   0   31
-Iteration 18 finished Wed Aug 24 21:18:41 2022
+Iteration 18 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  15 ( 19) Wed Aug 24 21:18:41 2022
+===ITERATION  15 ( 19) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1001,7 +1001,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   293 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.484s/ 15.00km (  0.1%)
 skipping data...
 # obs =     11653 (  Inf%)
@@ -1011,12 +1011,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        11653         293         293   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    30.6; anorm =   650.0; arnorm =    11.1; xnorm =    16.3
 
 Residual summary:
  absolute mean [s] =  0.0006 (    Inf %)
- weighted mean [s] = -0.0001 (-100.23 %)
+ weighted mean [s] = -0.0001 (******* %)
  absolute variance [s] =   160.4949 (    Inf %)
  weighted variance [s] =    63.2932 (    Inf %)
  absolute ct rms [s] =  0.3800 (  -0.30 %)
@@ -1042,9 +1042,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.015
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 19 15  98  96  326  -0.2   916   27   53   78    4  444   0   31
-Iteration 19 finished Wed Aug 24 21:18:41 2022
+Iteration 19 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  16 ( 20) Wed Aug 24 21:18:41 2022
+===ITERATION  16 ( 20) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1053,7 +1053,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   293 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.203s/ 10.00km ( 11.8%)
 skipping data...
 # obs =     10273 (  Inf%)
@@ -1063,12 +1063,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        10273         287         287   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    38.9; anorm =   745.1; arnorm =    14.1; xnorm =    23.9
 
 Residual summary:
  absolute mean [s] =  0.0012 (    Inf %)
- weighted mean [s] = -0.0005 (-101.27 %)
+ weighted mean [s] = -0.0005 (******* %)
  absolute variance [s] =   155.0757 (    Inf %)
  weighted variance [s] =    40.1425 (    Inf %)
  absolute ct rms [s] =  0.3712 (  -2.31 %)
@@ -1085,9 +1085,9 @@ Location summary:
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 20     96  85  334   2.3   916  141  147  150   12  444   1   39
-Iteration 20 finished Wed Aug 24 21:18:41 2022
+Iteration 20 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  16 ( 21) Wed Aug 24 21:18:41 2022
+===ITERATION  16 ( 21) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1096,7 +1096,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   287 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.145s/ 10.00km (  0.1%)
 skipping data...
 # obs =     10264 (  Inf%)
@@ -1106,12 +1106,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        10264         286         286   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    40.5; anorm =   759.2; arnorm =     9.1; xnorm =    24.2
 
 Residual summary:
  absolute mean [s] =  0.0021 (    Inf %)
- weighted mean [s] = -0.0005 (-101.37 %)
+ weighted mean [s] = -0.0005 (******* %)
  absolute variance [s] =   153.3096 (    Inf %)
  weighted variance [s] =    39.4466 (    Inf %)
  absolute ct rms [s] =  0.3691 (  -0.55 %)
@@ -1137,9 +1137,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.016
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 21 16  96  85  331  -0.8   934  145  147  151   12  459   0   41
-Iteration 21 finished Wed Aug 24 21:18:41 2022
+Iteration 21 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  17 ( 22) Wed Aug 24 21:18:41 2022
+===ITERATION  17 ( 22) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1148,7 +1148,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   286 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.123s/ 10.00km (  1.3%)
 skipping data...
 # obs =     10129 (  Inf%)
@@ -1158,12 +1158,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        10129         286         286   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    37.6; anorm =   725.6; arnorm =    13.5; xnorm =    17.1
 
 Residual summary:
  absolute mean [s] =  0.0021 (    Inf %)
- weighted mean [s] = -0.0005 (-101.33 %)
+ weighted mean [s] = -0.0005 (******* %)
  absolute variance [s] =   155.2838 (    Inf %)
  weighted variance [s] =    38.6841 (    Inf %)
  absolute ct rms [s] =  0.3712 (   0.56 %)
@@ -1189,9 +1189,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.017
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 22 17  96  83  326  -1.6   951   85  101  110    8  472   0   38
-Iteration 22 finished Wed Aug 24 21:18:41 2022
+Iteration 22 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  18 ( 23) Wed Aug 24 21:18:41 2022
+===ITERATION  18 ( 23) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1200,7 +1200,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   286 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.091s/ 10.00km (  0.8%)
 skipping data...
 # obs =     10051 (  Inf%)
@@ -1210,12 +1210,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:        10051         286         286   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    37.3; anorm =   717.4; arnorm =    12.7; xnorm =    16.1
 
 Residual summary:
  absolute mean [s] =  0.0016 (    Inf %)
- weighted mean [s] = -0.0007 (-101.88 %)
+ weighted mean [s] = -0.0007 (******* %)
  absolute variance [s] =   155.7375 (    Inf %)
  weighted variance [s] =    37.9102 (    Inf %)
  absolute ct rms [s] =  0.3715 (   0.10 %)
@@ -1241,9 +1241,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.018
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 23 18  96  83  323  -1.0   965   64   80   89    7  480   0   37
-Iteration 23 finished Wed Aug 24 21:18:41 2022
+Iteration 23 finished Thu Aug 25 00:17:45 2022
 
-===ITERATION  19 ( 24) Wed Aug 24 21:18:41 2022
+===ITERATION  19 ( 24) Thu Aug 25 00:17:45 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1252,7 +1252,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   286 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:45 2022 
  ct res/dist cutoff [s]:  2.073s/ 10.00km (  0.9%)
 skipping data...
 # obs =      9963 (  Inf%)
@@ -1262,12 +1262,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:         9963         284         284   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:45 2022@
   istop = 2; acond (CND)=    35.0; anorm =   676.8; arnorm =    10.3; xnorm =    13.9
 
 Residual summary:
  absolute mean [s] =  0.0017 (    Inf %)
- weighted mean [s] = -0.0006 (-101.77 %)
+ weighted mean [s] = -0.0006 (******* %)
  absolute variance [s] =   156.3057 (    Inf %)
  weighted variance [s] =    37.1539 (    Inf %)
  absolute ct rms [s] =  0.3722 (   0.17 %)
@@ -1293,9 +1293,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.019
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 24 19  95  82  320  -0.7   976   53   67   78    6  461   0   35
-Iteration 24 finished Wed Aug 24 21:18:41 2022
+Iteration 24 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  20 ( 25) Wed Aug 24 21:18:41 2022
+===ITERATION  20 ( 25) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1304,7 +1304,7 @@ Weighting parameters for this iteration:
 
 ~ getting partials for    15 stations and   284 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  2.059s/ 10.00km (  0.6%)
 skipping data...
 # obs =      9900 (  Inf%)
@@ -1314,12 +1314,12 @@ skipping data...
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:         9900         283         283   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022@
+~ lsqr ...    Thu Aug 25 00:17:46 2022@
   istop = 2; acond (CND)=    35.1; anorm =   675.1; arnorm =     8.4; xnorm =    11.3
 
 Residual summary:
  absolute mean [s] =  0.0016 (    Inf %)
- weighted mean [s] = -0.0008 (-102.16 %)
+ weighted mean [s] = -0.0008 (******* %)
  absolute variance [s] =   156.6309 (    Inf %)
  weighted variance [s] =    36.6285 (    Inf %)
  absolute ct rms [s] =  0.3725 (   0.09 %)
@@ -1345,12 +1345,12 @@ Relocation results for this iteration are stored in hypoDD.reloc.001.020
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 25 20  95  82  319  -0.5   986   40   54   66    5  506   0   35
-Iteration 25 finished Wed Aug 24 21:18:41 2022
+Iteration 25 finished Thu Aug 25 00:17:46 2022
 
-RELOCATION OF CLUSTER: 2     Wed Aug 24 21:18:41 2022
+RELOCATION OF CLUSTER: 2     Thu Aug 25 00:17:46 2022
 ----------------------
 
-~ Reading data ...   Wed Aug 24 21:18:41 2022U
+~ Reading data ...   Thu Aug 25 00:17:46 2022U
 # stations total =     23
 # stations < maxdist =     21
 # stations w/ neg. elevation (set to 0) =    0
@@ -1364,7 +1364,7 @@ Rotation of coordinate system:   0.000000
 # events:    2
 # initial trial sources:     2
 
-===ITERATION   1 (  1) Wed Aug 24 21:18:41 2022
+===ITERATION   1 (  1) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1387,13 +1387,13 @@ Residual summary of initial data:
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   55.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022
+~ lsqr ...    Thu Aug 25 00:17:46 2022
   istop = 2; acond (CND)=     2.0; anorm =    78.0; arnorm =     0.0; xnorm =     4.6
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  1.0348 (    Inf %)
- weighted mean [s] =  1.0348 (2789.26 %)
+ weighted mean [s] =  1.0348 (******* %)
  absolute variance [s] =   480.4162 (    Inf %)
  weighted variance [s] =   480.4162 (    Inf %)
  absolute ct rms [s] =  1.1599 (  -0.91 %)
@@ -1419,9 +1419,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.001
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  1  1 100 100 1160  -0.9  1405   12   10   17    4    0   0    2
-Iteration  1 finished Wed Aug 24 21:18:41 2022
+Iteration  1 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION   2 (  2) Wed Aug 24 21:18:41 2022
+===ITERATION   2 (  2) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1435,13 +1435,13 @@ no data skipped.
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   55.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022˜
+~ lsqr ...    Thu Aug 25 00:17:46 2022š
   istop = 2; acond (CND)=     2.0; anorm =    78.0; arnorm =     0.0; xnorm =     4.5
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  1.0252 (    Inf %)
- weighted mean [s] =  1.0252 (2762.51 %)
+ weighted mean [s] =  1.0252 (******* %)
  absolute variance [s] =   473.6966 (    Inf %)
  weighted variance [s] =   473.6966 (    Inf %)
  absolute ct rms [s] =  1.1493 (  -0.91 %)
@@ -1467,9 +1467,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.002
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  2  2 100 100 1149  -0.9  1394   12   10   17    4    1   0    2
-Iteration  2 finished Wed Aug 24 21:18:41 2022
+Iteration  2 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION   3 (  3) Wed Aug 24 21:18:41 2022
+===ITERATION   3 (  3) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1483,13 +1483,13 @@ no data skipped.
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   55.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022˜
+~ lsqr ...    Thu Aug 25 00:17:46 2022š
   istop = 2; acond (CND)=     2.0; anorm =    78.0; arnorm =     0.0; xnorm =     4.5
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  1.0157 (    Inf %)
- weighted mean [s] =  1.0157 (2735.99 %)
+ weighted mean [s] =  1.0157 (******* %)
  absolute variance [s] =   467.1274 (    Inf %)
  weighted variance [s] =   467.1274 (    Inf %)
  absolute ct rms [s] =  1.1389 (  -0.91 %)
@@ -1515,9 +1515,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.003
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  3  3 100 100 1139  -0.9  1382   12   10   17    4    1   0    2
-Iteration  3 finished Wed Aug 24 21:18:41 2022
+Iteration  3 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION   4 (  4) Wed Aug 24 21:18:41 2022
+===ITERATION   4 (  4) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1531,13 +1531,13 @@ no data skipped.
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   55.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022˜
+~ lsqr ...    Thu Aug 25 00:17:46 2022š
   istop = 2; acond (CND)=     2.0; anorm =    78.0; arnorm =     0.0; xnorm =     4.4
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  1.0067 (    Inf %)
- weighted mean [s] =  1.0067 (2710.76 %)
+ weighted mean [s] =  1.0067 (******* %)
  absolute variance [s] =   460.0598 (    Inf %)
  weighted variance [s] =   460.0598 (    Inf %)
  absolute ct rms [s] =  1.1288 (  -0.88 %)
@@ -1563,9 +1563,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.004
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  4  4 100 100 1129  -0.9  1371   12   10   16    4    1   0    2
-Iteration  4 finished Wed Aug 24 21:18:41 2022
+Iteration  4 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION   5 (  5) Wed Aug 24 21:18:41 2022
+===ITERATION   5 (  5) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1579,13 +1579,13 @@ no data skipped.
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   55.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022˜
+~ lsqr ...    Thu Aug 25 00:17:46 2022š
   istop = 2; acond (CND)=     2.0; anorm =    78.0; arnorm =     0.0; xnorm =     4.4
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.9976 (    Inf %)
- weighted mean [s] =  0.9976 (2685.55 %)
+ weighted mean [s] =  0.9976 (******* %)
  absolute variance [s] =   453.3768 (    Inf %)
  weighted variance [s] =   453.3768 (    Inf %)
  absolute ct rms [s] =  1.1189 (  -0.88 %)
@@ -1611,9 +1611,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.005
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  5  5 100 100 1119  -0.9  1360   12   10   16    4    1   0    2
-Iteration  5 finished Wed Aug 24 21:18:41 2022
+Iteration  5 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION   6 (  6) Wed Aug 24 21:18:41 2022
+===ITERATION   6 (  6) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1622,20 +1622,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  3.662s/ 20.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    71.0; arnorm =     0.0; xnorm =     4.4
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.9873 (    Inf %)
- weighted mean [s] =  0.9724 (2615.01 %)
+ weighted mean [s] =  0.9724 (******* %)
  absolute variance [s] =   446.1910 (    Inf %)
  weighted variance [s] =   223.7359 (    Inf %)
  absolute ct rms [s] =  1.1075 (  -1.02 %)
@@ -1661,9 +1661,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.006
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  6  6 100 100 1077  -3.8  1347   13   10   18    4    1   0    2
-Iteration  6 finished Wed Aug 24 21:18:41 2022
+Iteration  6 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION   7 (  7) Wed Aug 24 21:18:41 2022
+===ITERATION   7 (  7) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1672,20 +1672,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  3.626s/ 20.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    71.0; arnorm =     0.0; xnorm =     4.4
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.9771 (    Inf %)
- weighted mean [s] =  0.9622 (2586.69 %)
+ weighted mean [s] =  0.9622 (******* %)
  absolute variance [s] =   439.1956 (    Inf %)
  weighted variance [s] =   220.0777 (    Inf %)
  absolute ct rms [s] =  1.0962 (  -1.02 %)
@@ -1711,9 +1711,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.007
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  7  7 100 100 1065  -1.0  1335   13   10   18    4    1   0    2
-Iteration  7 finished Wed Aug 24 21:18:41 2022
+Iteration  7 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION   8 (  8) Wed Aug 24 21:18:41 2022
+===ITERATION   8 (  8) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1722,20 +1722,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  3.591s/ 20.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    71.0; arnorm =     0.0; xnorm =     4.4
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.9670 (    Inf %)
- weighted mean [s] =  0.9522 (2558.71 %)
+ weighted mean [s] =  0.9522 (******* %)
  absolute variance [s] =   432.3072 (    Inf %)
  weighted variance [s] =   216.6028 (    Inf %)
  absolute ct rms [s] =  1.0850 (  -1.02 %)
@@ -1761,9 +1761,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.008
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  8  8 100 100 1054  -1.0  1322   13   10   18    4    1   0    2
-Iteration  8 finished Wed Aug 24 21:18:41 2022
+Iteration  8 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION   9 (  9) Wed Aug 24 21:18:41 2022
+===ITERATION   9 (  9) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1772,20 +1772,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  3.555s/ 20.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    71.0; arnorm =     0.0; xnorm =     4.3
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.9569 (    Inf %)
- weighted mean [s] =  0.9423 (2530.96 %)
+ weighted mean [s] =  0.9423 (******* %)
  absolute variance [s] =   425.5765 (    Inf %)
  weighted variance [s] =   213.0493 (    Inf %)
  absolute ct rms [s] =  1.0740 (  -1.02 %)
@@ -1811,9 +1811,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.009
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
  9  9 100 100 1044  -1.0  1310   12   10   18    4    1   0    2
-Iteration  9 finished Wed Aug 24 21:18:41 2022
+Iteration  9 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  10 ( 10) Wed Aug 24 21:18:41 2022
+===ITERATION  10 ( 10) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1822,20 +1822,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  3.520s/ 20.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   50.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    71.0; arnorm =     0.0; xnorm =     4.3
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.9470 (    Inf %)
- weighted mean [s] =  0.9324 (2503.52 %)
+ weighted mean [s] =  0.9324 (******* %)
  absolute variance [s] =   418.9362 (    Inf %)
  weighted variance [s] =   209.6611 (    Inf %)
  absolute ct rms [s] =  1.0631 (  -1.02 %)
@@ -1861,9 +1861,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.010
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 10 10 100 100 1033  -1.0  1298   12   10   18    4    1   0    2
-Iteration 10 finished Wed Aug 24 21:18:41 2022
+Iteration 10 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  11 ( 11) Wed Aug 24 21:18:41 2022
+===ITERATION  11 ( 11) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1872,20 +1872,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  3.137s/ 15.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    63.9; arnorm =     0.0; xnorm =     4.7
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.9352 (    Inf %)
- weighted mean [s] =  0.9152 (2455.36 %)
+ weighted mean [s] =  0.9152 (******* %)
  absolute variance [s] =   411.3122 (    Inf %)
  weighted variance [s] =   143.2476 (    Inf %)
  absolute ct rms [s] =  1.0500 (  -1.23 %)
@@ -1911,9 +1911,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.011
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 11 11 100 100 1009  -2.3  1284   15   11   21    5    0   0    2
-Iteration 11 finished Wed Aug 24 21:18:41 2022
+Iteration 11 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  12 ( 12) Wed Aug 24 21:18:41 2022
+===ITERATION  12 ( 12) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1922,20 +1922,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  3.097s/ 15.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    63.9; arnorm =     0.0; xnorm =     4.7
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.9235 (    Inf %)
- weighted mean [s] =  0.9036 (2422.85 %)
+ weighted mean [s] =  0.9036 (******* %)
  absolute variance [s] =   403.7880 (    Inf %)
  weighted variance [s] =   140.1643 (    Inf %)
  absolute ct rms [s] =  1.0371 (  -1.23 %)
@@ -1961,9 +1961,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.012
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 12 12 100 100  997  -1.3  1270   14   11   21    5    1   0    2
-Iteration 12 finished Wed Aug 24 21:18:41 2022
+Iteration 12 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  13 ( 13) Wed Aug 24 21:18:41 2022
+===ITERATION  13 ( 13) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -1972,20 +1972,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  3.059s/ 15.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    63.9; arnorm =     0.0; xnorm =     4.6
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.9119 (    Inf %)
- weighted mean [s] =  0.8921 (2390.93 %)
+ weighted mean [s] =  0.8921 (******* %)
  absolute variance [s] =   396.5371 (    Inf %)
  weighted variance [s] =   137.2618 (    Inf %)
  absolute ct rms [s] =  1.0245 (  -1.22 %)
@@ -2011,9 +2011,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.013
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 13 13 100 100  984  -1.3  1256   14   10   21    5    1   0    2
-Iteration 13 finished Wed Aug 24 21:18:41 2022
+Iteration 13 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  14 ( 14) Wed Aug 24 21:18:41 2022
+===ITERATION  14 ( 14) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -2022,20 +2022,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  3.021s/ 15.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    63.9; arnorm =     0.0; xnorm =     4.5
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.9005 (    Inf %)
- weighted mean [s] =  0.8808 (2359.35 %)
+ weighted mean [s] =  0.8808 (******* %)
  absolute variance [s] =   389.3893 (    Inf %)
  weighted variance [s] =   134.4061 (    Inf %)
  absolute ct rms [s] =  1.0119 (  -1.22 %)
@@ -2061,9 +2061,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.014
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 14 14 100 100  972  -1.3  1242   14   10   20    5    1   0    2
-Iteration 14 finished Wed Aug 24 21:18:41 2022
+Iteration 14 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  15 ( 15) Wed Aug 24 21:18:41 2022
+===ITERATION  15 ( 15) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -2072,20 +2072,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  2.983s/ 15.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   45.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    63.9; arnorm =     0.0; xnorm =     4.5
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.8893 (    Inf %)
- weighted mean [s] =  0.8696 (2328.05 %)
+ weighted mean [s] =  0.8696 (******* %)
  absolute variance [s] =   382.4091 (    Inf %)
  weighted variance [s] =   131.4600 (    Inf %)
  absolute ct rms [s] =  0.9995 (  -1.23 %)
@@ -2111,9 +2111,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.015
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 15 15 100 100  960  -1.3  1228   14   10   20    5    1   0    2
-Iteration 15 finished Wed Aug 24 21:18:41 2022
+Iteration 15 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  16 ( 16) Wed Aug 24 21:18:41 2022
+===ITERATION  16 ( 16) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -2122,20 +2122,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  2.619s/ 10.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    56.9; arnorm =     0.0; xnorm =     4.1
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.8757 (    Inf %)
- weighted mean [s] =  0.8476 (2266.66 %)
+ weighted mean [s] =  0.8476 (******* %)
  absolute variance [s] =   374.4444 (    Inf %)
  weighted variance [s] =    52.1034 (    Inf %)
  absolute ct rms [s] =  0.9846 (  -1.49 %)
@@ -2161,9 +2161,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.016
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 16 16 100 100  930  -3.1  1212   16   11   25    6    1   0    2
-Iteration 16 finished Wed Aug 24 21:18:41 2022
+Iteration 16 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  17 ( 17) Wed Aug 24 21:18:41 2022
+===ITERATION  17 ( 17) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -2172,20 +2172,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  2.575s/ 10.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    56.9; arnorm =     0.0; xnorm =     4.1
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.8623 (    Inf %)
- weighted mean [s] =  0.8342 (2229.20 %)
+ weighted mean [s] =  0.8342 (******* %)
  absolute variance [s] =   366.7102 (    Inf %)
  weighted variance [s] =    50.1720 (    Inf %)
  absolute ct rms [s] =  0.9699 (  -1.49 %)
@@ -2211,9 +2211,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.017
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 17 17 100 100  915  -1.6  1196   16   11   24    6    1   0    2
-Iteration 17 finished Wed Aug 24 21:18:41 2022
+Iteration 17 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  18 ( 18) Wed Aug 24 21:18:41 2022
+===ITERATION  18 ( 18) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -2222,20 +2222,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  2.532s/ 10.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    56.9; arnorm =     0.0; xnorm =     4.0
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.8491 (    Inf %)
- weighted mean [s] =  0.8210 (2192.40 %)
+ weighted mean [s] =  0.8210 (******* %)
  absolute variance [s] =   359.2283 (    Inf %)
  weighted variance [s] =    48.3136 (    Inf %)
  absolute ct rms [s] =  0.9555 (  -1.49 %)
@@ -2261,9 +2261,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.018
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 18 18 100 100  901  -1.6  1181   16   10   24    6    1   0    2
-Iteration 18 finished Wed Aug 24 21:18:41 2022
+Iteration 18 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  19 ( 19) Wed Aug 24 21:18:41 2022
+===ITERATION  19 ( 19) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -2272,20 +2272,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  2.490s/ 10.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    56.9; arnorm =     0.0; xnorm =     3.9
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.8362 (    Inf %)
- weighted mean [s] =  0.8081 (2156.20 %)
+ weighted mean [s] =  0.8081 (******* %)
  absolute variance [s] =   351.9840 (    Inf %)
  weighted variance [s] =    46.5054 (    Inf %)
  absolute ct rms [s] =  0.9413 (  -1.48 %)
@@ -2311,9 +2311,9 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.019
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 19 19 100 100  886  -1.6  1166   15   10   23    6    1   0    2
-Iteration 19 finished Wed Aug 24 21:18:41 2022
+Iteration 19 finished Thu Aug 25 00:17:46 2022
 
-===ITERATION  20 ( 20) Wed Aug 24 21:18:41 2022
+===ITERATION  20 ( 20) Thu Aug 25 00:17:46 2022
 
 Weighting parameters for this iteration:
   wt_ccp= *******  wt_ccs= *******  maxr_cc= *******  maxd_cc= -999.00
@@ -2322,20 +2322,20 @@ Weighting parameters for this iteration:
 
 ~ getting partials for     6 stations and     2 source(s) ...
 ~ getting residual vector...
-re-weighting ... Wed Aug 24 21:18:41 2022 
+re-weighting ... Thu Aug 25 00:17:46 2022 
  ct res/dist cutoff [s]:  2.448s/ 10.00km (  0.0%)
 no data skipped.
 
 ~ setting up G matrix.. 
       ndt, nev, nsrc, damp:            6           2           2   40.0000000    
 ~ scaling G columns ... 
-~ lsqr ...    Wed Aug 24 21:18:41 2022 
+~ lsqr ...    Thu Aug 25 00:17:46 2022 
   istop = 2; acond (CND)=     2.0; anorm =    56.9; arnorm =     0.0; xnorm =     3.8
  >>> Warning: ndt < 4*nev
 
 Residual summary:
  absolute mean [s] =  0.8234 (    Inf %)
- weighted mean [s] =  0.7952 (2120.40 %)
+ weighted mean [s] =  0.7952 (******* %)
  absolute variance [s] =   344.8616 (    Inf %)
  weighted variance [s] =    44.6822 (    Inf %)
  absolute ct rms [s] =  0.9273 (  -1.49 %)
@@ -2361,6 +2361,6 @@ Relocation results for this iteration are stored in hypoDD.reloc.002.020
   IT   EV  CT    RMSCT   RMSST   DX   DY   DZ   DT   OS  AQ  CND
         %   %   ms     %    ms    m    m    m   ms    m 
 20 20 100 100  872  -1.6  1150   15   10   23    6    1   0    2
-Iteration 20 finished Wed Aug 24 21:18:41 2022
+Iteration 20 finished Thu Aug 25 00:17:46 2022
 
-   Program hypoDD finished. Wed Aug 24 21:18:41 2022
+   Program hypoDD finished. Thu Aug 25 00:17:46 2022
