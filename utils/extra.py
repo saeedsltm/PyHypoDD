@@ -1,34 +1,22 @@
+import os
 import random
 import time
-
-from numpy import argsort, array, nan, sqrt
-from obspy.geodetics.base import degrees2kilometers as d2k
-from obspy.geodetics.base import gps2dist_azimuth as gps
 from datetime import datetime as dt
 from datetime import timedelta as td
 from math import sqrt
-import os
-from pandas import read_json, to_datetime
 
+from numpy import nan, sqrt
+from obspy.geodetics.base import degrees2kilometers as d2k
+from obspy.geodetics.base import locations2degrees as l2d
+from pandas import read_json, read_csv, to_datetime
 
-def decoratorTimer(decimal, logger):
-    """get the execution time of a function
+def parseStationFile(stationFileName):
+    stationsDF = read_csv(stationFileName, delim_whitespace=True)
+    return stationsDF
 
-    Args:
-        decimal (int): decimal precision of evaluated time
-    """
-    def decoratorFunction(f):
-        def wrap(*args, **kwargs):
-            time1 = time.monotonic()
-            result = f(*args, **kwargs)
-            time2 = time.monotonic()
-            msg = "function '{:s}' took {:.{}f} s".format(
-                f.__name__, ((time2-time1)), decimal)
-            logger.info(msg)
-            return result
-        return wrap
-    return decoratorFunction
-
+def parseVelocityFile(velocityFileName):
+    velocityDF = read_csv(velocityFileName, delim_whitespace=True)
+    return velocityDF
 
 def distanceDiff(xa, xb, ya, yb):
     """Compute distance between two lists of points
@@ -107,18 +95,19 @@ def mapError2Weight(err, m, std, addWeight=True):
     elif 1.0*absError <= abs(err):
         return 4
 
+
 def ReadExtra(pick, reverseWeight=False):
     """reads pick weight 
 
     Args:
         pick (event.pick): an obspy event pick
         reverseWeight (bool, optional): if True reverse weight is on [4>0, 3>0.75... 0>1.0]. Defaults to False.
-        
+
 
     Returns:
         str: pick weight
     """
-    mapWeight = {"4":0, "3":0.25, "2":0.5, "1":0.75, "0":1.0}
+    mapWeight = {"4": 0, "3": 0.25, "2": 0.5, "1": 0.75, "0": 1.0}
     try:
         weight = pick.extra.get("nordic_pick_weight", "0")
         if isinstance(weight, type({})):
@@ -127,22 +116,30 @@ def ReadExtra(pick, reverseWeight=False):
         weight = "0"
     return float(mapWeight[weight])
 
+
 def hypoDD2xyzm():
+    """Convert HypoDD "reloc" file to "xyzm"
+    """
     events = read_json("events.json")
     ots = to_datetime(events["OT"])
     with open("hypoDD.reloc") as f, open("xyzm.dat", "w") as g:
         header = "     LON     LAT   DEPTH     MAG    PHUSD   NO_ST   MIND     GAP     RMS     SEH     SEZ  YYYY MM DD HH MN SEC"
         g.write(header+"\n")
         for l in f:
-            if "NaN" in l.split():continue
-            _, lat, lon, dep,_,_,_,ex,ey,ez,yr,mo,dy,hr,mn,sc,mag,_,_,_,_,_,rms,_ = [float(_) for _ in l.split()]
-            if sc == 60.0: sc = 59.99
+            if "NaN" in l.split():
+                continue
+            _, lat, lon, dep, _, _, _, ex, ey, ez, yr, mo, dy, hr, mn, sc, mag, _, _, _, _, _, rms, _ = [
+                float(_) for _ in l.split()]
+            if sc == 60.0:
+                sc = 59.99
             yr, mo, dy, hr, mn = [int(_) for _ in [yr, mo, dy, hr, mn]]
             msc = int((sc - int(sc))*1e6)
             sc = int(sc)
-            ort = dt(yr,mo,dy,hr,mn,sc,msc)
-            mag = events[abs(ots-ort)<td(seconds=5)].Mag.values[0]  # type: ignore
-            if not mag: mag = 0.0
+            ort = dt(yr, mo, dy, hr, mn, sc, msc)
+            mag = events[abs(ots-ort) < td(seconds=5)  # type: ignore
+                         ].Mag.values[0]
+            if not mag:
+                mag = 0.0
             ort = ort.strftime("  %Y %m %d %H %M %S.%f")[:24]
             nop = 99
             nst = 99
@@ -154,13 +151,25 @@ def hypoDD2xyzm():
             fmt = '%8.3f%8.3f%8.1f%8.1f%8d%8d%8.1f%8d%8.3f%8.1f%8.1f'
             fmt = fmt + ort+'\n'
             # lon lat dep mag phusd no_st mds gap rms seh sez
-            g.write(fmt%(lon, lat, dep, mag, nop, nst, mds, gap, rms, seh, sez))
+            g.write(fmt % (lon, lat, dep, mag, nop,
+                    nst, mds, gap, rms, seh, sez))
     cmd = "rm *reloc*"
     os.system(cmd)
 
-def checkStationDist(configs, staLat, staLon):
-    d = gps(configs["CentralLat"], configs["CentralLon"], staLat, staLon)[0]*1e-3
-    if d <= configs["MAXDIST"]:
-        return True
-    else:
-        return False
+
+def checkStationDist(configs, stationsDF):
+    """Check if station is within the radius defined by user
+
+    Args:
+        configs (dict): a dictionary contains configurations
+        staLat (float): latitude of station
+        staLon (float): longitude of station
+
+    Returns:
+        bool: True if the station lies within the pre-defined radius
+    """
+
+    d = d2k(l2d(configs["Region"]["CentralLat"], configs["Region"]["CentralLon"],
+            stationsDF.LAT.values, stationsDF.LON.values))
+    stationsDF = stationsDF[d <= configs["PH2DT"]["MAXDIST"]]
+    return stationsDF

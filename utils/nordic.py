@@ -183,7 +183,6 @@ def catalog2xyzm(hypInp, catalogFileName):
             "Lon": lon,
             "Lat": lat,
             "Dep": dep,
-            # "mag":mag,
             "Nus": nus,
             "NuP": nuP,
             "NuS": nuS,
