@@ -141,10 +141,12 @@ def hypoDD2xyzm():
                "DD", "HH", "MN", "SEC", "MAG", "NCCP", "NCCS", "NPHASEP", "NPHASES", "RCC", "RMS", "CID"]
     relocatedEvents = read_csv(
         "hypoDD.reloc", delim_whitespace=True, names=columns)
+    relocatedEvents["SEH"] = 0.5*(sqrt(relocatedEvents["EX"]**2 + relocatedEvents["EY"]**2)*1e-3)  # type: ignore
+    relocatedEvents["SEZ"] = relocatedEvents["EZ"]*1e-3
     for i, relocatedEvent in relocatedEvents.iterrows():
         mag = originEvents[originEvents.ID == relocatedEvent.ID].Mag
         relocatedEvents.at[i, "MAG"] = mag
-    for NoneValue in ["NSTUSED", "MIND", "GAP", "SEH", "SEZ"]:
+    for NoneValue in ["NSTUSED", "MIND", "GAP"]:
         relocatedEvents[NoneValue] = nan
     formatters = {
         "LON": '{:.3f}'.format,
@@ -157,8 +159,8 @@ def hypoDD2xyzm():
         "MIND": '{:.0f}'.format,
         "GAP": '{:.0f}'.format,
         "RMS": '{:.2f}'.format,
-        "SEH": '{:.0f}'.format,
-        "SEZ": '{:.0f}'.format,
+        "SEH": '{:.1f}'.format,
+        "SEZ": '{:.1f}'.format,
         "YYYY": '{:.0f}'.format,
         "MM": '{:.0f}'.format,
         "DD": '{:.0f}'.format,
