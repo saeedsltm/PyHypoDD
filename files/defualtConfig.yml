@@ -1,0 +1,22 @@
+#======== Section 01, Input data
+IO:
+  InputCatalogFileName: "rawData/updatedCatalog.dat"
+  InputStationFileName: "rawData/station.dat"
+  InputVelocityFileName: "rawData/velocity.dat"
+#======== Section 02, Study region
+Region:
+  CentralLat: 27.50
+  CentralLon: 56.00
+#======== Section 03, HypoDD "ph2dt" parameters
+PH2DT:
+  MINWGHT: 0
+  MAXDIST: 350
+  MAXSEP: 10
+  MAXNGH: 10
+  MINLNKS: 5
+  MINOBS: 5
+  MAXOBS: 20
+#======== Section 04, HypoDD "HypoDD" parameters
+HypoDD:
+  DIST: 350
+  OBSCT: 5

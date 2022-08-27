@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 VERSION = '0.0.1' 
-DESCRIPTION = 'Complete set of moduls for Runing HypoDD'
+DESCRIPTION = 'Complete set of modules for running HypoDD'
 LONG_DESCRIPTION = 'I will add later...'
 
 # Setting up
@@ -14,8 +14,7 @@ setup(
         description=DESCRIPTION,
         long_description=LONG_DESCRIPTION,
         packages=find_packages(),
-        install_requires=[], # add any additional packages that 
-        # needs to be installed along with your package. Eg: 'caer'
+        install_requires=[], # add any additional packages
         keywords=['python', 'first package'],
         classifiers= [
             "Development Status :: 3 - Alpha",

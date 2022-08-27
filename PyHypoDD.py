@@ -1,24 +1,29 @@
 import os
-from pathlib import Path
+import warnings
 from datetime import datetime as dt
+from pathlib import Path
+from shutil import copy
 
 from obspy import read_events
 from tqdm import tqdm
 from yaml import SafeLoader, load
 
-from utils.extra import parseStationFile, parseVelocityFile, filterStations, hypoDD2xyzm
-from utils.hypoDD import (prepareHypoDDConfigFiles, writeEventsInfo, writeHeader,
-                          writePhase)
+from utils.extra import (filterStations, hypoDD2xyzm, parseStationFile,
+                         parseVelocityFile)
+from utils.hypoDD import (prepareHypoDDConfigFiles, writeEventsInfo,
+                          writeHeader, writePhase)
+
+warnings.filterwarnings("ignore")
 
 
-class HypoDD():
+class HypoDDRunner():
     def __init__(self):
+        if not os.path.exists("config.yml"):
+            copy(os.path.join("files", "defaultConfig.yml"), "config.yml")
         with open("config.yml") as f:
             self.configs = load(f, Loader=SafeLoader)
-        self.catalog = read_events(self.configs["IO"]["InputCatalogFileName"])
-        self.stationsDF = parseStationFile(self.configs["IO"]["InputStationFileName"])
-        self.velocityDF = parseVelocityFile(self.configs["IO"]["InputVelocityFileName"])
-        self.resultDir = os.path.join("results", dt.now().strftime("%y-%m-%dT%H%M%S"))
+        self.resultDir = os.path.join(
+            "results", dt.now().strftime("%y-%m-%dT%H%M%S"))
         self.createResultFolder()
 
     def createResultFolder(self):
@@ -26,14 +31,15 @@ class HypoDD():
         """
         Path(self.resultDir).mkdir(parents=True, exist_ok=True)
 
-    def prepareHypoDDInputFiles(self):
+    def prepareHypoDDInputFiles(self, catalog, stationsDF, velocityDF):
         """Prepare input files for running HypoDD
         """
-        usedStationsDF = filterStations(self.configs, self.stationsDF)
-        usedStationsDF.to_csv(os.path.join(self.resultDir, "station.dat"), sep=' ', index=False, header=False)
+        usedStationsDF = filterStations(self.configs, stationsDF)
+        usedStationsDF.to_csv(os.path.join(
+            self.resultDir, "station.dat"), sep=' ', index=False, header=False)
         eventsInfo = []
         with open(os.path.join(self.resultDir, "phase.dat"), "w") as f:
-            for eventNumber, event in enumerate(tqdm(self.catalog)):
+            for eventNumber, event in enumerate(tqdm(catalog)):
                 picks = event.picks
                 preferred_origin = event.preferred_origin()
                 preferred_magnitude = event.preferred_magnitude()
@@ -50,9 +56,10 @@ class HypoDD():
                     "SMI": event.resource_id.id})
                 arrivals = preferred_origin.arrivals
                 writeHeader(preferred_origin, eventNumber, f)
-                writePhase(preferred_origin, picks, arrivals, usedStationsDF.CODE.values, f)
+                writePhase(preferred_origin, picks, arrivals,
+                           usedStationsDF.CODE.values, f)
         writeEventsInfo(eventsInfo, self.resultDir)
-        prepareHypoDDConfigFiles(self.configs, self.velocityDF, self.resultDir)
+        prepareHypoDDConfigFiles(self.configs, velocityDF, self.resultDir)
 
     def runHypoDD(self):
         """Run HypoDD programs
@@ -66,7 +73,11 @@ class HypoDD():
         hypoDD2xyzm()
         os.chdir(root)
 
+
 if __name__ == "__main__":
-    app = HypoDD()
-    app.prepareHypoDDInputFiles()
+    app = HypoDDRunner()
+    catalog = read_events(app.configs["IO"]["InputCatalogFileName"])
+    stationsDF = parseStationFile(app.configs["IO"]["InputStationFileName"])
+    velocityDF = parseVelocityFile(app.configs["IO"]["InputVelocityFileName"])
+    app.prepareHypoDDInputFiles(catalog, stationsDF, velocityDF)
     app.runHypoDD()
