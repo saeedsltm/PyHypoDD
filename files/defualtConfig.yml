@@ -8,15 +8,15 @@ Region:
   CentralLat: 27.50
   CentralLon: 56.00
 #======== Section 03, HypoDD "ph2dt" parameters
-PH2DT:
-  MINWGHT: 0
-  MAXDIST: 350
-  MAXSEP: 10
-  MAXNGH: 10
-  MINLNKS: 5
-  MINOBS: 5
-  MAXOBS: 20
+PH2DT:          # defaults
+  MINWGHT: 0    # 0
+  MAXDIST: 350  # 200
+  MAXSEP: 10    # 10
+  MAXNGH: 10    # 10
+  MINLNKS: 5    # 8
+  MINOBS: 5     # 8
+  MAXOBS: 20    # 20
 #======== Section 04, HypoDD "HypoDD" parameters
-HypoDD:
-  DIST: 350
-  OBSCT: 5
+HypoDD:         # defaults
+  DIST: 350     # 200
+  OBSCT: 5      # 8
