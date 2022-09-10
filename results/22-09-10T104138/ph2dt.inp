@@ -13,4 +13,4 @@ phase.dat
 *MINOBS: min. number of links per pair saved [8]
 *MAXOBS: max. number of links per pair saved [20]
 *MINWGHT MAXDIST MAXSEP MAXNGH MINLNKS MINOBS MAXOBS
-0  350  10  10  5  5  20
+0.0  350  10  10  8  5  50

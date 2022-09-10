@@ -9,7 +9,7 @@ from tqdm import tqdm
 from yaml import SafeLoader, load
 
 from utils.extra import (filterStations, hypoDD2xyzm, parseStationFile,
-                         parseVelocityFile)
+                         parseVelocityFile, OutputCatalog)
 from utils.hypoDD import (prepareHypoDDConfigFiles, writeEventsInfo,
                           writeHeader, writePhase)
 
@@ -38,7 +38,8 @@ class HypoDDRunner():
         usedStationsDF.to_csv(os.path.join(
             self.resultDir, "station.dat"), sep=' ', index=False, header=False)
         eventsInfo = []
-        with open(os.path.join(self.resultDir, "phase.dat"), "w") as f:
+        outCatalogFile = os.path.join(self.resultDir, "phase.dat")
+        with open(outCatalogFile, "w") as f:
             for eventNumber, event in enumerate(tqdm(catalog)):
                 picks = event.picks
                 preferred_origin = event.preferred_origin()
@@ -60,6 +61,7 @@ class HypoDDRunner():
                            usedStationsDF.CODE.values, f)
         writeEventsInfo(eventsInfo, self.resultDir)
         prepareHypoDDConfigFiles(self.configs, velocityDF, self.resultDir)
+        OutputCatalog(self.configs, self.resultDir, outCatalogFile, usedStationsDF, velocityDF)
 
     def runHypoDD(self):
         """Run HypoDD programs
@@ -81,3 +83,4 @@ if __name__ == "__main__":
     velocityDF = parseVelocityFile(app.configs["IO"]["InputVelocityFileName"])
     app.prepareHypoDDInputFiles(catalog, stationsDF, velocityDF)
     app.runHypoDD()
+    

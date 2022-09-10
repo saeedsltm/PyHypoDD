@@ -5,7 +5,9 @@ from math import sqrt
 from numpy import nan, sqrt
 from obspy.geodetics.base import degrees2kilometers as d2k
 from obspy.geodetics.base import locations2degrees as l2d
+from obspy import read_events
 from pandas import read_json, read_csv
+from LatLon import lat_lon as ll
 
 
 def parseStationFile(stationFileName):
@@ -174,6 +176,58 @@ def hypoDD2xyzm():
     cmd = "rm *reloc*"
     os.system(cmd)
 
+def writeStationZeroFile(stationFile, stationsDF, velocityDF, trialDepth, xNear, xFar):
+    """Write STATION0.HYP file
+
+    Args:
+        stationFile (str): output file name,
+        stationCodes (list): a list contains stations code,
+        stationLats (list): a list contains stations latitude,
+        stationLons (list): a list contains stations longitude,
+        stationElvs (list): a list contains stations elevation,
+        Vp (list): a list contains layers velocity,
+        Z (list): a list contains layers depth,
+        Interfaces (list): a list contains layers interface,
+        trialDepth (float): starting trial depth,
+        xNear (float): distance where the weight is maximum within,
+        xFar (float): distance where the weight is 0 beyond,
+        VpVs (float): Vp to Vs ratio,
+
+    Returns:
+        str: saved station file name.
+    """
+    stationCodes = stationsDF["CODE"].values
+    stationLats = stationsDF["LAT"].values
+    stationLons = stationsDF["LON"].values
+    stationElvs = stationsDF["ELV"].values
+    Vp = velocityDF["Vp"].values
+    Z = velocityDF["Z"].values
+    VpVs = velocityDF["VpVs"].values[0]
+    Interfaces = velocityDF["Interface"].values
+    with open(os.path.join("files", "resets.dat")) as f, open(stationFile, "w") as g:
+        for l in f:
+            g.write(l)
+        g.write("\n\n")
+        for code, lat, lon, elv in zip(stationCodes, stationLats, stationLons, stationElvs):
+            lat = ll.Latitude(lat)
+            lon = ll.Longitude(lon)
+            g.write("  {code:4s}{latDeg:2.0f}{latMin:05.2f}N {lonDeg:2.0f}{lonMin:05.2f}E{elv:4.0f}\n".format(
+                code=code,
+                latDeg=lat.degree, latMin=lat.decimal_minute,
+                lonDeg=lon.degree, lonMin=lon.decimal_minute,
+                elv=elv
+            ))
+        g.write("\n")
+        for v, z, i in zip(Vp, Z, Interfaces):
+            g.write(" {v:5.2f}  {z:6.3f}       {i:1s}     \n".format(
+                v=v, z=z, i=i.replace("nul", " ")
+            ))
+        g.write("\n")
+        g.write("{trialDepth:4.0f}.{xNear:4.0f}.{xFar:4.0f}. {VpVs:4.2f}".format(
+            trialDepth=trialDepth, xNear=xNear, xFar=xFar, VpVs=VpVs
+        ))
+        g.write("\nNew")
+    return stationFile    
 
 def filterStations(configs, stationsDF):
     """Check if station is within the radius defined by user
@@ -189,3 +243,12 @@ def filterStations(configs, stationsDF):
                                stationsDF.LAT.values, stationsDF.LON.values))
     stationsDF = stationsDF[criticalDistance <= configs["PH2DT"]["MAXDIST"]]
     return stationsDF
+
+def OutputCatalog(configs, resultDir, CatalogFile, stationsDF, velocityDF):
+    catalog = read_events(CatalogFile)
+    outputCatalogName = os.path.join(resultDir, "selectedCatalog.dat")
+    catalog.write(outputCatalogName, format=configs["OutPut"]["CatalogFormat"])
+    if configs["OutPut"]["CatalogFormat"] == "NORDIC":
+        outputStationName = os.path.join(resultDir, "STATION0.HYP")
+        writeStationZeroFile(outputStationName, stationsDF, velocityDF, trialDepth=10, xNear=50, xFar=500)
+

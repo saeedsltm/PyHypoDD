@@ -9,14 +9,17 @@ Region:
   CentralLon: 56.00
 #======== Section 03, HypoDD "ph2dt" parameters
 PH2DT:          # defaults
-  MINWGHT: 0    # 0
+  MINWGHT: 0.0  # 0
   MAXDIST: 350  # 200
   MAXSEP: 10    # 10
   MAXNGH: 10    # 10
-  MINLNKS: 5    # 8
+  MINLNKS: 8    # 8
   MINOBS: 5     # 8
-  MAXOBS: 20    # 20
+  MAXOBS: 50    # 20
 #======== Section 04, HypoDD "HypoDD" parameters
 HypoDD:         # defaults
   DIST: 350     # 200
   OBSCT: 5      # 8
+#======== Section 05, Prepare output files
+OutPut:
+  CatalogFormat : "NORDIC"
