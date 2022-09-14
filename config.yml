@@ -15,7 +15,7 @@ PH2DT:          # defaults
   MAXNGH: 10    # 10
   MINLNKS: 8    # 8
   MINOBS: 5     # 8
-  MAXOBS: 50    # 20
+  MAXOBS: 20    # 20
 #======== Section 04, HypoDD "HypoDD" parameters
 HypoDD:         # defaults
   DIST: 350     # 200
