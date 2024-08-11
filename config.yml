@@ -1,25 +1,17 @@
 #======== Section 01, Input data
-IO:
-  InputCatalogFileName: "rawData/updatedCatalog.dat"
-  InputStationFileName: "rawData/station.dat"
-  InputVelocityFileName: "rawData/velocity.dat"
+Files:
+  InputCatalogFileName: "DB/2021_2024.out"
 #======== Section 02, Study region
 Region:
-  CentralLat: 27.50
-  CentralLon: 56.00
-#======== Section 03, HypoDD "ph2dt" parameters
-PH2DT:          # defaults
-  MINWGHT: 0.0  # 0
-  MAXDIST: 350  # 200
-  MAXSEP: 10    # 10
-  MAXNGH: 10    # 10
-  MINLNKS: 8    # 8
-  MINOBS: 5     # 8
-  MAXOBS: 20    # 20
-#======== Section 04, HypoDD "HypoDD" parameters
-HypoDD:         # defaults
-  DIST: 350     # 200
-  OBSCT: 5      # 8
-#======== Section 05, Prepare output files
-OutPut:
-  CatalogFormat : "NORDIC"
+  CentralLat: 36.00
+  CentralLon: 52.00
+  Radius: 300.0
+  RegionName: "CAlborz"
+#======== Section 02, Velocity Model
+VelocityModel:
+  Pvel: [5.35, 5.80, 6.00, 6.15, 6.40, 8.0]
+  Deps: [0.0, 6.0, 10.5, 16.0, 22.5, 56.0]
+  VpVs: 1.73
+#======== Section 03, Visulization
+Figures:
+  EventsMaxDepth: 30
