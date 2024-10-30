@@ -33,7 +33,7 @@ def plotSeismicityMap(config):
             lambda x: Series(
                 proj(longitude=x.Lon, latitude=x.Lat)), axis=1)
         db["z"] = db["Dep"]
-    stationPath = os.path.join("stations", "stations.csv")
+    stationPath = os.path.join("stations", "usedStations.csv")
     stations_df = read_csv(stationPath)
 
     axShape = [

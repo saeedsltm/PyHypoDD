@@ -1,16 +1,16 @@
 #======== Section 01, Input data
 Files:
-  InputCatalogFileName: "DB/2021_2024.out"
+  InputCatalogFileName: "DB/Golestan.out"
 #======== Section 02, Study region
 Region:
-  CentralLat: 36.00
-  CentralLon: 52.00
-  Radius: 300.0
-  RegionName: "CAlborz"
+  CentralLat: 37.00
+  CentralLon: 55.00
+  Radius: 400.0
+  RegionName: "EAlborz"
 #======== Section 02, Velocity Model
 VelocityModel:
-  Pvel: [5.35, 5.80, 6.00, 6.15, 6.40, 8.0]
-  Deps: [0.0, 6.0, 10.5, 16.0, 22.5, 56.0]
+  Pvel: [5.90, 6.15, 6.20, 6.30, 6.35, 8.00, 8.20]
+  Deps: [0.00, 5.00, 10.0, 20.0, 33.0, 42.0, 70.0]
   VpVs: 1.73
 #======== Section 03, Visulization
 Figures:

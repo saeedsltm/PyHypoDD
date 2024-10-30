@@ -11,7 +11,7 @@ from obspy.core.event import Catalog
 from obspy.geodetics.base import degrees2kilometers as d2k
 from obspy.geodetics.base import gps2dist_azimuth as gps
 from obspy.geodetics.base import kilometers2degrees as k2d
-from pandas import DataFrame, Series, read_csv, to_datetime
+from pandas import DataFrame, Series, read_csv, to_datetime, concat
 from yaml import SafeLoader, load
 
 warnings.filterwarnings("ignore")
@@ -169,7 +169,7 @@ def loadVelocityFile(config):
     return velocity_df
 
 
-def writexyzm(outName, nEvents):
+def hypoddReloc2xyzm(nEvents, outName):
     hypodd_df = loadHypoDDRelocFile()
     outputFile = f"xyzm_{outName}.dat"
     hypodd_df["year"] = hypodd_df.YR
@@ -243,9 +243,9 @@ def computeExtraInfo(evLon, evLat, arrivals, stationFile):
     return Nus, NuP, NuS, ADS, MDS, GAP
 
 
-def hypoDD2nordic(outName, stationFile):
+def hypoDD2nordic(catalog, stationFile, outName):
+    catalog = catalog.copy()
     print(f"+++ Reading & Updating catalog for {outName} ...")
-    catalog = read_events(f"{outName}.out")
     hypodd_df = read_csv(f"xyzm_{outName}.dat", delim_whitespace=True)
     hypodd_df_out = hypodd_df.copy()
     hypodd_df.ERH = k2d(hypodd_df.ERH)
@@ -310,17 +310,16 @@ def hypoDD2nordic(outName, stationFile):
             })
 
 
-def catalog2xyzm(hypInp, outName):
+def catalog2xyzm(catalog, outName):
     """Convert catalog to xyzm file format
 
     Args:
         hypInp (str): file name of NORDIC file
         catalogFileName (str): file name of xyzm.dat file
     """
-    cat = read_events(hypInp)
     outputFile = f"xyzm_{outName:s}_initial.dat"
     catDict = {}
-    for i, event in enumerate(cat):
+    for i, event in enumerate(catalog):
         preferred_origin = event.preferred_origin()
         preferred_magnitude = event.preferred_magnitude()
         arrivals = preferred_origin.arrivals
@@ -393,6 +392,56 @@ def catalog2xyzm(hypInp, outName):
 def loadxyzm(*xyzmPaths):
     reports = []
     for xyzmPath in xyzmPaths:
-        report = read_csv(xyzmPath, delim_whitespace=True)
+        report = read_csv(xyzmPath, sep="\s+")
         reports.append(report)
     return reports
+
+
+def mergeDFs(nChunks, outName):
+    initial_xyzm_df = DataFrame()
+    hypodd_xyzm_df = DataFrame()
+    for nChunk in range(nChunks+1):
+        initial_db_path = os.path.join(
+            f"chunk_{nChunk+1}", f"xyzm_{outName}_initial.dat")
+        hypodd_db_path = os.path.join(
+            f"chunk_{nChunk+1}", f"xyzm_{outName}_hypodd.dat")
+        initial_db, hypodd_db = loadxyzm(initial_db_path, hypodd_db_path)
+        initial_xyzm_df = concat([initial_xyzm_df, initial_db])
+        hypodd_xyzm_df = concat([hypodd_xyzm_df, hypodd_db])
+    columns = ["ORT", "Lon", "Lat", "Dep", "Mag",
+               "Nus", "NuP", "NuS", "ADS", "MDS", "GAP", "RMS", "ERH", "ERZ"]
+    with open(f"xyzm_{outName}_initial.dat", "w") as f, open(f"xyzm_{outName}_hypodd.dat", "w") as g:
+        initial_xyzm_df.to_string(
+            f, columns=columns, index=False, formatters={
+                "ORT": "{:}".format,
+                "Lon": "{:7.3f}".format,
+                "Lat": "{:7.3f}".format,
+                "Dep": "{:7.3f}".format,
+                "Mag": "{:4.1f}".format,
+                "Nus": "{:3.0f}".format,
+                "NuP": "{:3.0f}".format,
+                "NuS": "{:3.0f}".format,
+                "ADS": "{:5.1f}".format,
+                "MDS": "{:5.1f}".format,
+                "GAP": "{:3.0f}".format,
+                "RMS": "{:5.2f}".format,
+                "ERH": "{:7.3f}".format,
+                "ERZ": "{:7.3f}".format,
+            })
+        hypodd_xyzm_df.to_string(
+            g, columns=columns, index=False, formatters={
+                "ORT": "{:}".format,
+                "Lon": "{:7.3f}".format,
+                "Lat": "{:7.3f}".format,
+                "Dep": "{:7.3f}".format,
+                "Mag": "{:4.1f}".format,
+                "Nus": "{:3.0f}".format,
+                "NuP": "{:3.0f}".format,
+                "NuS": "{:3.0f}".format,
+                "ADS": "{:5.1f}".format,
+                "MDS": "{:5.1f}".format,
+                "GAP": "{:3.0f}".format,
+                "RMS": "{:5.2f}".format,
+                "ERH": "{:7.3f}".format,
+                "ERZ": "{:7.3f}".format,
+            })

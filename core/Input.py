@@ -1,7 +1,6 @@
 import os
 
 from numpy import nan
-from obspy import read_events
 from pandas import read_csv
 
 
@@ -27,10 +26,8 @@ def prepareVelocity(velocity_df):
     return velocities, depths, VpVs, nLayers
 
 
-def preparePhaseFile(catalogFile):
+def preparePhaseFile(catalog):
     phaseFile = os.path.join("phase.dat")
-    catalog = read_events(f"{catalogFile}.out")
-    nEvents = len(catalog)
     ws = {"0": 1.00,
           "1": 0.75,
           "2": 0.50,
@@ -43,7 +40,7 @@ def preparePhaseFile(catalogFile):
             ORT = po.time.strftime("%Y %m %d %H %M %S.%f")
             LAT = po.latitude
             LON = po.longitude
-            DEP = po.depth*1e-3
+            DEP = po.depth*1e-3 if po.depth else 10.0
             MAG = pm.mag if pm else nan
             picks = event.picks
             header = f"# {ORT} {LAT:6.3f} {LON:6.3f} {DEP:5.1f} {MAG:4.1f} 0.0 0.0 0.0 {e+1:9.0f}\n"
@@ -56,7 +53,6 @@ def preparePhaseFile(catalogFile):
                 pha = pick.phase_hint
                 phase = f"{sta:4s} {tt:6.3f} {w:4.2f} {pha:1s}\n"
                 f.write(phase)
-    return nEvents
 
 
 def preparePH2DT(config, hypoddConfig):
@@ -179,13 +175,12 @@ def prepareHypoDD(config, hypoddConfig, velocity_df):
 
 def prepareHypoddInputs(config,
                         hypoddConfig,
-                        catalogFile,
+                        catalog,
                         stationFile,
                         velocity_df,
                         locationPath):
     print("+++ Preparing HypoDD input files ...")
-    nEvents = preparePhaseFile(catalogFile)
+    preparePhaseFile(catalog)
     prepareStationFile(stationFile)
     preparePH2DT(config, hypoddConfig)
     prepareHypoDD(config, hypoddConfig, velocity_df)
-    return nEvents

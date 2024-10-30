@@ -1,5 +1,7 @@
 import os
 from pathlib import Path
+import requests
+from bs4 import BeautifulSoup
 
 from obspy import read_events
 from obspy.geodetics.base import gps2dist_azimuth as gps
@@ -14,6 +16,7 @@ def GetStationListFromCatalog(config):
     print("+++ Generating list of used stations from input catalog ...")
     Path("stations").mkdir(parents=True, exist_ok=True)
     catalogPath = config["Files"]["InputCatalogFileName"]
+    print("+++ Reading catalog using Obspy ...")
     catalog = read_events(catalogPath)
     stationsList = []
     for event in catalog:
@@ -23,11 +26,42 @@ def GetStationListFromCatalog(config):
             if code not in stationsList:
                 stationsList.append(code)
     stationsList = sorted(stationsList, key=lambda x: (len(x), x))
-    with open(os.path.join("stations", "usedStations.yml"), "w") as outfile:
-        dump({"usedStations": stationsList},
+    with open(os.path.join("stations", "stationsInCatlog.yml"), "w") as outfile:
+        dump({"catalogStations": stationsList},
              outfile,
              default_flow_style=False,
              sort_keys=False)
+
+
+def downloadMissedStationFromISC(missedStations):
+    sta_list = "%2C".join([f"{code}" for code in missedStations])
+    data = []
+    foundedStations = []
+    # URL for the station search
+    url = f"https://www.isc.ac.uk/cgi-bin/stations?stnsearch=STN&sta_list={sta_list}&stn_ctr_lat=&stn_ctr_lon=&stn_radius=&max_stn_dist_units=deg&stn_bot_lat=&stn_top_lat=&stn_left_lon=&stn_right_lon=&stn_srn=&stn_grn="
+    # Send a GET request to the URL
+    response = requests.get(url)
+    # Check if the request was successful
+    if response.status_code == 200:
+        # Parse the HTML content
+        soup = BeautifulSoup(response.content, 'html.parser')
+        text = soup.text.splitlines()
+        for line in text:
+            code = line[:5].strip()
+            if code in missedStations:
+                lat = float(line[59:67])
+                lon = float(line[69:77])
+                elv = float(line[79:88])
+                info = {
+                    "code": code,
+                    "lat": lat,
+                    "lon": lon,
+                    "elv": elv
+                }
+                foundedStations.append(code)
+                data.append(info)
+    missedStations = list(set(missedStations) - set(foundedStations))
+    return data, missedStations
 
 
 def CreatInputStationFile(config):
@@ -41,7 +75,7 @@ def CreatInputStationFile(config):
             +units=km")
     data = []
     missedStations = []
-    with open(os.path.join("stations", "usedStations.yml")) as infile:
+    with open(os.path.join("stations", "stationsInCatlog.yml")) as infile:
         usedStations = safe_load(infile)
     statioFileNames = download_IRSSI("stations")
     stationsInfo = {}
@@ -49,7 +83,7 @@ def CreatInputStationFile(config):
         with open(os.path.join("stations", name)) as infile:
             info = safe_load(infile)
             stationsInfo.update(info)
-    for station in usedStations["usedStations"]:
+    for station in usedStations["catalogStations"]:
         if station in stationsInfo:
             info = {"code": station,
                     "lat": stationsInfo[station][-1]["latitude"],
@@ -58,6 +92,8 @@ def CreatInputStationFile(config):
             data.append(info)
         else:
             missedStations.append(station)
+    newData, missedStations = downloadMissedStationFromISC(missedStations)
+    data.extend(newData)
     stations_df = DataFrame(data)
     stations_df[["x", "y"]] = stations_df.apply(
         lambda x: Series(
@@ -69,7 +105,7 @@ def CreatInputStationFile(config):
     stations_df.sort_values(by=["r"], inplace=True)
     unusedStations_df = stations_df[stations_df.r > radius]
     stations_df = stations_df[stations_df.r <= radius]
-    stations_df.to_csv(os.path.join("stations", "stations.csv"),
+    stations_df.to_csv(os.path.join("stations", "usedStations.csv"),
                        index=False, float_format="%8.3f")
     unusedStations_df.to_csv(os.path.join("stations", "unusedStations.csv"),
                              index=False, float_format="%8.3f")
